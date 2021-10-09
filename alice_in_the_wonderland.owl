@@ -1,0 +1,808 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY alice_in_the_wonderland "http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#"
+     xml:base="http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:alice_in_the_wonderland="http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#clothesBelongTo -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;clothesBelongTo">
+        <rdfs:label>одежда принадлежит</rdfs:label>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Character"/>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Clothes"/>
+        <owl:inverseOf rdf:resource="&alice_in_the_wonderland;wears"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#go -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;go">
+        <rdfs:label>идти</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Character"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Gait"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#inhabitedBy -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;inhabitedBy">
+        <rdfs:label>населено</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;ResidentOfKingdom"/>
+        <owl:propertyDisjointWith rdf:resource="&alice_in_the_wonderland;liveInKingdom"/>
+        <owl:inverseOf rdf:resource="&alice_in_the_wonderland;liveInKingdom"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#liveInKingdom -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;liveInKingdom">
+        <rdfs:label>живет</rdfs:label>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;ResidentOfKingdom"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#ruledByLeader -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;ruledByLeader">
+        <rdfs:label>находилось в правлении</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <owl:inverseOf rdf:resource="&alice_in_the_wonderland;rulesKingdom"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#ruledKingdom -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;ruledKingdom">
+        <rdfs:label>правил</rdfs:label>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#rulesKingdom -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;rulesKingdom">
+        <rdfs:label>правит королевством</rdfs:label>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#serveTheLeader -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;serveTheLeader">
+        <rdfs:label>служит</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Leader"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#toolUsedBy -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;toolUsedBy">
+        <rdfs:label>инструмент принадлежит</rdfs:label>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Gardener"/>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Tool"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#useTool -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;useTool">
+        <rdfs:label>использует</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Gardener"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Tool"/>
+        <owl:inverseOf rdf:resource="&alice_in_the_wonderland;toolUsedBy"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#useWeapon -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;useWeapon">
+        <rdfs:label>вооружен</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Soldier"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Weapon"/>
+        <owl:inverseOf rdf:resource="&alice_in_the_wonderland;weaponUsedBy"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#weaponUsedBy -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;weaponUsedBy">
+        <rdfs:label>оружие принадлежит</rdfs:label>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Soldier"/>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Weapon"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#wears -->
+
+    <owl:ObjectProperty rdf:about="&alice_in_the_wonderland;wears">
+        <rdfs:label>носит</rdfs:label>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Character"/>
+        <rdfs:range rdf:resource="&alice_in_the_wonderland;Clothes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#valueOfTheCrown -->
+
+    <owl:DatatypeProperty rdf:about="&alice_in_the_wonderland;valueOfTheCrown">
+        <rdfs:label>ценность короны</rdfs:label>
+        <rdfs:comment>измеряется в у.е.</rdfs:comment>
+        <rdfs:domain rdf:resource="&alice_in_the_wonderland;Crown"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Character -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Character">
+        <rdfs:label>Персонаж</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Clothes -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Clothes">
+        <rdfs:label>Одежда</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Courtier -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Courtier">
+        <rdfs:label>Слуга</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;ResidentOfKingdom"/>
+        <owl:disjointWith rdf:resource="&alice_in_the_wonderland;Leader"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Crown -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Crown">
+        <rdfs:label>Корона</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Hat"/>
+        <owl:disjointWith rdf:resource="&alice_in_the_wonderland;TopHat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Gait -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Gait">
+        <rdfs:label>Походка</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Gardener -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Gardener">
+        <rdfs:label>Садовник</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <owl:disjointWith rdf:resource="&alice_in_the_wonderland;Soldier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Hat -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Hat">
+        <rdfs:label>Шляпа</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Clothes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Kingdom -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Kingdom">
+        <rdfs:label>Королевство</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Leader -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Leader">
+        <rdfs:label>Правитель</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;ResidentOfKingdom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#ResidentOfKingdom -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;ResidentOfKingdom">
+        <rdfs:label>Житель</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Soldier -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Soldier">
+        <rdfs:label>Солдат</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Courtier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Tool -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Tool">
+        <rdfs:label>Инструмент</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#TopHat -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;TopHat">
+        <rdfs:label>Цилиндр</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Hat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Weapon -->
+
+    <owl:Class rdf:about="&alice_in_the_wonderland;Weapon">
+        <rdfs:label>Оружие</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&alice_in_the_wonderland;Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Alice -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;Alice">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Character"/>
+        <rdfs:label>Алиса</rdfs:label>
+        <go rdf:resource="&alice_in_the_wonderland;JustWalk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#Battleaxe -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;Battleaxe">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Weapon"/>
+        <rdfs:label>Боевой топор</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#ChiseledPeaks -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;ChiseledPeaks">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Weapon"/>
+        <rdfs:label>Пики точеные</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#ClubsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;ClubsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:label>Трефовое королевство</rdfs:label>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;JackOfClubsKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdom"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdomII"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdomII"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;LadyOfClubsKingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#CrownOfClubsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;CrownOfClubsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Crown"/>
+        <rdfs:label>Корона Трефового Королевства</rdfs:label>
+        <valueOfTheCrown rdf:datatype="&xsd;integer">800</valueOfTheCrown>
+        <clothesBelongTo rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdomII"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#CrownOfDiamondKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;CrownOfDiamondKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Crown"/>
+        <rdfs:label>Корона Бубнового Королевства</rdfs:label>
+        <valueOfTheCrown rdf:datatype="&xsd;integer">720</valueOfTheCrown>
+        <clothesBelongTo rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomIII"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#CrownOfKingOfHeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;CrownOfKingOfHeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Crown"/>
+        <rdfs:label>Корона Короля Червового Королевства</rdfs:label>
+        <valueOfTheCrown rdf:datatype="&xsd;integer">535</valueOfTheCrown>
+        <clothesBelongTo rdf:resource="&alice_in_the_wonderland;KingOfHeartsKingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#CrownOfQueenOfHeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;CrownOfQueenOfHeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Crown"/>
+        <rdfs:label>Корона Королевы Червового Королевства</rdfs:label>
+        <valueOfTheCrown rdf:datatype="&xsd;integer">685</valueOfTheCrown>
+        <clothesBelongTo rdf:resource="&alice_in_the_wonderland;QueenOfHeartsKingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#CrownOfSpadesKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;CrownOfSpadesKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Crown"/>
+        <rdfs:label>Корона Пикового Королевства</rdfs:label>
+        <valueOfTheCrown rdf:datatype="&xsd;integer">1000</valueOfTheCrown>
+        <clothesBelongTo rdf:resource="&alice_in_the_wonderland;QueenOfSpadesKingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#DarkBlackTopHat -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;DarkBlackTopHat">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;TopHat"/>
+        <rdfs:label>Темно-черный цилиндр</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#DiamondKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;DiamondKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:label>Бубновое королевство</rdfs:label>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;JackOfDiamondKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;JokerOfDiamondKingdom"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdom"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomII"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomII"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomIII"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomIII"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#GardenShears -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;GardenShears">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Tool"/>
+        <rdfs:label>Садовые ножницы</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#HeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;HeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:label>Червовое королевство</rdfs:label>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;JackOfHeartsKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;JokerOfHeartsKingdom"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;KingOfHeartsKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;KingOfHeartsKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;QueenOfHeartsKingdom"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;QueenOfHeartsKingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JackOfClubsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JackOfClubsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Soldier"/>
+        <rdfs:label>Валет Треф</rdfs:label>
+        <useWeapon rdf:resource="&alice_in_the_wonderland;ChiseledPeaks"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdom"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdomII"/>
+        <go rdf:resource="&alice_in_the_wonderland;WalkSmootly"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JackOfDiamondKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JackOfDiamondKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Soldier"/>
+        <rdfs:label>Бубновый Валет</rdfs:label>
+        <useWeapon rdf:resource="&alice_in_the_wonderland;Battleaxe"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdom"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomII"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomIII"/>
+        <go rdf:resource="&alice_in_the_wonderland;WalkSmootly"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JackOfHeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JackOfHeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Soldier"/>
+        <rdfs:label>Валет Червей</rdfs:label>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;KingOfHeartsKingdom"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfHeartsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;WalkSmootly"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JokerOfClubsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JokerOfClubsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <rdfs:label>Шут Треф</rdfs:label>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdom"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;KingOfClubsKingdomII"/>
+        <go rdf:resource="&alice_in_the_wonderland;RunSkipping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JokerOfDiamondKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JokerOfDiamondKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <rdfs:label>Бубновый Шут</rdfs:label>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdom"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomII"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfDiamondKingdomIII"/>
+        <go rdf:resource="&alice_in_the_wonderland;RunSkipping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JokerOfHeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JokerOfHeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <rdfs:label>Шут Червей</rdfs:label>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;KingOfHeartsKingdom"/>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfHeartsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;RunSkipping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JokerOfSpadesKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JokerOfSpadesKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <rdfs:label>Пиковый Шут</rdfs:label>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfSpadesKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;RunSkipping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#JustWalk -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;JustWalk">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gait"/>
+        <rdfs:label>Шагом</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#KingOfClubsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;KingOfClubsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Король Треф</rdfs:label>
+        <ruledKingdom rdf:resource="&alice_in_the_wonderland;ClubsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#KingOfClubsKingdomII -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;KingOfClubsKingdomII">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Король Треф II</rdfs:label>
+        <rulesKingdom rdf:resource="&alice_in_the_wonderland;ClubsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#KingOfHeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;KingOfHeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Король Черви</rdfs:label>
+        <wears rdf:resource="&alice_in_the_wonderland;CrownOfKingOfHeartsKingdom"/>
+        <rulesKingdom rdf:resource="&alice_in_the_wonderland;HeartsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#LadyOfClubsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;LadyOfClubsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gardener"/>
+        <rdfs:label>Дама Треф</rdfs:label>
+        <useTool rdf:resource="&alice_in_the_wonderland;GardenShears"/>
+        <go rdf:resource="&alice_in_the_wonderland;WalkSmootly"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#LadyOfSpadesKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;LadyOfSpadesKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gardener"/>
+        <rdfs:label>Пиковая Дама</rdfs:label>
+        <go rdf:resource="&alice_in_the_wonderland;WalkSmootly"/>
+        <useTool rdf:resource="&alice_in_the_wonderland;WateringCan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#MadHatter -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;MadHatter">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Character"/>
+        <rdfs:label>Шляпник</rdfs:label>
+        <wears rdf:resource="&alice_in_the_wonderland;DarkBlackTopHat"/>
+        <go rdf:resource="&alice_in_the_wonderland;RushHeadlong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#MadMarchHare -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;MadMarchHare">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Character"/>
+        <rdfs:label>Мартовский Заяц</rdfs:label>
+        <go rdf:resource="&alice_in_the_wonderland;RushHeadlong"/>
+        <wears rdf:resource="&alice_in_the_wonderland;StrawTopHat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#QueenOfDiamondKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;QueenOfDiamondKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Бубновая Королева</rdfs:label>
+        <ruledKingdom rdf:resource="&alice_in_the_wonderland;DiamondKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#QueenOfDiamondKingdomII -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;QueenOfDiamondKingdomII">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Бубновая Королева II</rdfs:label>
+        <ruledKingdom rdf:resource="&alice_in_the_wonderland;DiamondKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#QueenOfDiamondKingdomIII -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;QueenOfDiamondKingdomIII">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Бубновая Королева III</rdfs:label>
+        <wears rdf:resource="&alice_in_the_wonderland;CrownOfDiamondKingdom"/>
+        <rulesKingdom rdf:resource="&alice_in_the_wonderland;DiamondKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#QueenOfHeartsKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;QueenOfHeartsKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Королева Черви</rdfs:label>
+        <wears rdf:resource="&alice_in_the_wonderland;CrownOfQueenOfHeartsKingdom"/>
+        <rulesKingdom rdf:resource="&alice_in_the_wonderland;HeartsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#QueenOfSpadesKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;QueenOfSpadesKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Leader"/>
+        <rdfs:label>Пиковая Королева</rdfs:label>
+        <wears rdf:resource="&alice_in_the_wonderland;CrownOfSpadesKingdom"/>
+        <rulesKingdom rdf:resource="&alice_in_the_wonderland;SpadesKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;StatelyStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#RunSkipping -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;RunSkipping">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gait"/>
+        <rdfs:label>Вприпрыжку</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#RushHeadlong -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;RushHeadlong">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gait"/>
+        <rdfs:label>Сломя голову</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#SpadesKingdom -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;SpadesKingdom">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Kingdom"/>
+        <rdfs:label>Пиковое Королевство</rdfs:label>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;JokerOfSpadesKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;LadyOfSpadesKingdom"/>
+        <inhabitedBy rdf:resource="&alice_in_the_wonderland;QueenOfSpadesKingdom"/>
+        <ruledByLeader rdf:resource="&alice_in_the_wonderland;QueenOfSpadesKingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#StatelyStep -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;StatelyStep">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gait"/>
+        <rdfs:label>Величаво</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#StrawTopHat -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;StrawTopHat">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;TopHat"/>
+        <rdfs:label>Соломенный Цилиндр</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#WalkSmootly -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;WalkSmootly">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Gait"/>
+        <rdfs:label>Плавно</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#WateringCan -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;WateringCan">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Tool"/>
+        <rdfs:label>Лейка</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland#WhiteRabbit -->
+
+    <owl:NamedIndividual rdf:about="&alice_in_the_wonderland;WhiteRabbit">
+        <rdf:type rdf:resource="&alice_in_the_wonderland;Courtier"/>
+        <rdfs:label>Белый Кролик</rdfs:label>
+        <serveTheLeader rdf:resource="&alice_in_the_wonderland;QueenOfHeartsKingdom"/>
+        <go rdf:resource="&alice_in_the_wonderland;RushHeadlong"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

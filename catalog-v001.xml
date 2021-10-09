@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1633794796563" name="http://www.semanticweb.org/come_ill_foo/ontologies/2021/8/alice_in_the_wonderland" uri="alice_in_the_wonderland.owl"/>
+    </group>
+</catalog>
